@@ -10,7 +10,7 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 # Copiar la aplicación
-ADD https://github.com/odomeneGit/aplicacionPHP.git
+ADD https://github.com/odomeneGit/aplicacionPHP.git .
 
 # Ajustar permisos
 RUN chown -R www-data:www-data /var/www/html \
