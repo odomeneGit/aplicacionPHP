@@ -1,0 +1,57 @@
+CREATE TABLE departamentos(
+  Numero int(11) NOT NULL DEFAULT 0,
+  Nombre varchar(20) DEFAULT NULL,
+  Localizacion varchar(10) DEFAULT NULL
+);
+
+
+INSERT INTO departamentos  VALUES
+(10, 'CONTABILIDAD', 'MADRID'),
+(20, 'INVESTIGACION', 'BARCELONA'),
+(30, 'VENTAS', 'BARCELONA'),
+(40, 'ADMINISTRACION', 'BURGOS');
+
+
+CREATE TABLE empleados (
+  Numero int(11) NOT NULL DEFAULT 0,
+  Nombre varchar(20) DEFAULT NULL,
+  Puesto varchar(15) DEFAULT NULL,
+  Jefe int(11) DEFAULT 0,
+  FechaAlta datetime DEFAULT NULL,
+  Salario int(11) DEFAULT 0,
+  Comision int(11) DEFAULT 0,
+  Departamento int(11) DEFAULT 0
+);
+
+
+INSERT INTO empleados VALUES
+(7782, 'PEDRO VALLES', 'DIRECTOR', 7839, '1981-06-09 00:00:00', 950, NULL, 10),
+(7788, 'MANUEL FONTERA', 'ANALISTA', 7566, '1982-12-28 00:00:00', 650, NULL, 20),
+(7839, 'JOSE PEREZ', 'PRESIDENTE', NULL, '1981-11-17 00:00:00', 10000, NULL, 10),
+(7844, 'MIGUEL GARCIA', 'JEFE DE VENTAS', 7698, '1981-10-08 00:00:00', 600, 400, 30),
+(7876, 'SANDRA BUREBA', 'VENDEDOR', 7788, '1983-05-17 00:00:00', 450, 100, 20),
+(7900, 'ISABEL PUENTE', 'VENDEDOR', 7698, '1982-12-12 00:00:00', 450, 60, 30),
+(7902, 'ALVARO GOMEZ', 'ANALISTA', 7566, '1981-07-04 00:00:00', 900, NULL, 20),
+(7934, 'JOSE LUIS SILLAS', 'VENDEDOR', 7788, '1981-03-10 00:00:00', 500, 10, 10);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `departamentos`
+--
+ALTER TABLE `departamentos`
+  ADD PRIMARY KEY (`Numero`);
+
+--
+-- Indices de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD PRIMARY KEY (`Numero`),
+  ADD KEY `Departamento` (`Departamento`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
