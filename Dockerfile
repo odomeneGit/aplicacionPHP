@@ -6,12 +6,12 @@ RUN docker-php-ext-install pdo pdo_mysql mysqli
 # Activar mod_rewrite
 RUN a2enmod rewrite
 
-#WORKDIR 
-WORKDIR /var/www/html
+#WORKDIR para produccion 
+#WORKDIR /var/www/html
 
-# Copiar la aplicación
-ADD https://github.com/odomeneGit/aplicacionPHP.git .
-
+# Copiar la aplicación produccion
+#ADD https://github.com/odomeneGit/aplicacionPHP.git .
+COPY ./src /var/www/html/ 
 # Ajustar permisos
 RUN chown -R www-data:www-data /var/www/html \
  && chmod -R 755 /var/www/html
