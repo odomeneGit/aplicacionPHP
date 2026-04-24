@@ -1,9 +1,3 @@
-# Variables de entorno
-.env
 
-# Docker
-Dockerfile
 
-#Compose
 
-compose.yml
