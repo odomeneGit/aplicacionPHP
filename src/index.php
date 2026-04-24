@@ -8,7 +8,7 @@
 </head>
 
 <body>
-
+     <h1> Version 2 </h1>
     <?php
      require_once("funciones.php");	
     $conexion = conectarBD();
